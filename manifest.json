@@ -1,9 +1,9 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "amarsh",
+  "name": "amarsh",
   "icons": [
     {
-      "src": "ap fevicon.png",
+      "src": "favicon.png",
       "type": "image/png",
       "sizes": "512x512 192x192 64x64 32x32 16x16"
     }
