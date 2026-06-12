@@ -20,11 +20,7 @@ const ExperienceSection: React.FC = () => {
               fontFamily: 'var(--font-mono)', fontSize: '0.62rem',
               color: 'var(--text-muted)', letterSpacing: '0.15em',
               textTransform: 'uppercase', marginBottom: '16px',
-            }}>{/* SELECT COMPANY */}</div>
-
-            {experiences.map((exp, idx) => (
-              <div
-                key={idx}
+                }}>{'SELECT COMPANY'}</div>
                 onClick={() => { setActiveExp(idx); setActiveProject(0); }}
                 style={{
                   padding: '16px 20px', marginBottom: '8px',
@@ -132,7 +128,7 @@ const ExperienceSection: React.FC = () => {
                     fontFamily: 'var(--font-mono)', fontSize: '0.62rem',
                     color: 'var(--text-muted)', letterSpacing: '0.1em',
                     textTransform: 'uppercase', marginBottom: '8px',
-                  }}>// PROJECT</div>
+                  }}>{'// PROJECT'}</div>
                   <h3 style={{
                     fontFamily: 'var(--font-display)', fontWeight: 700,
                     fontSize: 'clamp(0.95rem, 2vw, 1.2rem)',
@@ -154,7 +150,7 @@ const ExperienceSection: React.FC = () => {
                     fontFamily: 'var(--font-mono)', fontSize: '0.62rem',
                     color: 'var(--text-muted)', letterSpacing: '0.1em',
                     textTransform: 'uppercase', marginBottom: '12px',
-                  }}>// KEY CONTRIBUTIONS</div>
+                  }}>{'// KEY CONTRIBUTIONS'}</div>
                   <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px' }}>
                     {proj.highlights.map((h, i) => (
                       <li key={i} style={{

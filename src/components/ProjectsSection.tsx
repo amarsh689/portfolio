@@ -160,7 +160,7 @@ const ProjectsSection: React.FC = () => {
                       color: 'var(--text-muted)', letterSpacing: '0.1em',
                       textTransform: 'uppercase', marginBottom: '12px',
                       paddingTop: '4px', borderTop: `1px solid ${color}20`,
-                    }}>{/* Highlights */}</div>
+                    }}>{'HIGHLIGHTS'}</div>
                     <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '8px' }}>
                       {proj.highlights.map((h, i) => (
                         <li key={i} style={{

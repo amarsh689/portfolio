@@ -112,7 +112,7 @@ const SkillsSection: React.FC = () => {
             fontFamily: 'var(--font-mono)', fontSize: '0.65rem',
             color: 'var(--text-muted)', letterSpacing: '0.15em',
             textTransform: 'uppercase', marginBottom: '20px',
-          }}>{/* CERTIFICATIONS */}</div>
+          }}>{'CERTIFICATIONS'}</div>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '16px', flexWrap: 'wrap' }}>
             {[
               { code: 'AZ-104', name: 'Azure Administrator' },

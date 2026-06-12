@@ -19,7 +19,7 @@ const EducationSection: React.FC = () => {
               fontFamily: 'var(--font-mono)', fontSize: '0.65rem',
               color: 'var(--text-muted)', letterSpacing: '0.15em',
               textTransform: 'uppercase', marginBottom: '24px',
-            }}>// ACADEMIC BACKGROUND</div>
+            }>{'// ACADEMIC BACKGROUND'}</div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {education.map((edu, idx) => (
@@ -64,7 +64,7 @@ const EducationSection: React.FC = () => {
               fontFamily: 'var(--font-mono)', fontSize: '0.65rem',
               color: 'var(--text-muted)', letterSpacing: '0.15em',
               textTransform: 'uppercase', marginBottom: '24px',
-            }}>// CERTIFICATIONS</div>
+            }>{'// CERTIFICATIONS'}</div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {certifications.map((cert, idx) => (
@@ -123,7 +123,7 @@ const EducationSection: React.FC = () => {
                 fontFamily: 'var(--font-mono)', fontSize: '0.65rem',
                 color: 'var(--text-muted)', letterSpacing: '0.15em',
                 textTransform: 'uppercase', marginBottom: '16px',
-              }}>// LANGUAGES</div>
+              }>{'// LANGUAGES'}</div>
               <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
                 {['English', 'Hindi', 'Gujarati'].map((lang, i) => (
                   <div key={i} style={{
