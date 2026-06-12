@@ -20,7 +20,7 @@ const ExperienceSection: React.FC = () => {
               fontFamily: 'var(--font-mono)', fontSize: '0.62rem',
               color: 'var(--text-muted)', letterSpacing: '0.15em',
               textTransform: 'uppercase', marginBottom: '16px',
-            }}>// SELECT COMPANY</div>
+            }}>{/* SELECT COMPANY */}</div>
 
             {experiences.map((exp, idx) => (
               <div

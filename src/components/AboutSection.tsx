@@ -70,7 +70,7 @@ const AboutSection: React.FC = () => {
               fontFamily: 'var(--font-mono)', fontSize: '0.75rem',
               color: 'var(--text-muted)', letterSpacing: '0.15em',
               textTransform: 'uppercase', marginBottom: '12px',
-            }}>// WHO AM I</div>
+            }}>{/*WHO AM I*/}</div>
             <h2 style={{
               fontFamily: 'var(--font-display)', fontWeight: 700,
               fontSize: 'clamp(1.4rem, 3vw, 2rem)', color: 'var(--text-primary)',
