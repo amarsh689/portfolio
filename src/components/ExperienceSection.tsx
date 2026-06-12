@@ -5,7 +5,7 @@ const ExperienceSection: React.FC = () => {
   const [activeExp, setActiveExp] = useState(0);
   const [activeProject, setActiveProject] = useState(0);
 
-  const currentExp = experiences[activeExp];
+  const currentExp = experiences[activeExp] || experiences[0];
 
   return (
     <section id="experience" style={{ padding: '100px 0', position: 'relative', zIndex: 2 }}>
@@ -20,8 +20,15 @@ const ExperienceSection: React.FC = () => {
               fontFamily: 'var(--font-mono)', fontSize: '0.62rem',
               color: 'var(--text-muted)', letterSpacing: '0.15em',
               textTransform: 'uppercase', marginBottom: '16px',
-                }}>{'SELECT COMPANY'}</div>
-                onClick={() => { setActiveExp(idx); setActiveProject(0); }}
+            }}>{'SELECT COMPANY'}</div>
+
+            {experiences.map((exp, idx) => (
+              <div
+                key={idx}
+                onClick={() => {
+                  setActiveExp(idx);
+                  setActiveProject(0);
+                }}
                 style={{
                   padding: '16px 20px', marginBottom: '8px',
                   cursor: 'pointer', borderRadius: '8px',
@@ -68,7 +75,6 @@ const ExperienceSection: React.FC = () => {
 
           {/* Content panel */}
           <div>
-            {/* Role header */}
             <div className="glass-card" style={{ padding: '24px', marginBottom: '24px' }}>
               <div style={{
                 fontFamily: 'var(--font-mono)', fontSize: '0.65rem',
@@ -100,7 +106,6 @@ const ExperienceSection: React.FC = () => {
               </div>
             </div>
 
-            {/* Project tabs */}
             <div style={{ marginBottom: '16px', display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
               {currentExp.projects.map((proj, i) => (
                 <button key={i} onClick={() => setActiveProject(i)} style={{
@@ -119,7 +124,6 @@ const ExperienceSection: React.FC = () => {
               ))}
             </div>
 
-            {/* Active project detail */}
             {currentExp.projects[activeProject] && (() => {
               const proj = currentExp.projects[activeProject];
               return (
@@ -140,12 +144,12 @@ const ExperienceSection: React.FC = () => {
                     fontSize: '0.95rem', marginBottom: '20px',
                   }}>{proj.description}</p>
 
-                  {/* Tech tags */}
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '24px' }}>
-                    {proj.tech.map((t, i) => <span key={i} className="tag">{t}</span>)}
+                    {proj.tech.map((t, i) => (
+                      <span key={i} className="tag">{t}</span>
+                    ))}
                   </div>
 
-                  {/* Highlights */}
                   <div style={{
                     fontFamily: 'var(--font-mono)', fontSize: '0.62rem',
                     color: 'var(--text-muted)', letterSpacing: '0.1em',
@@ -161,7 +165,7 @@ const ExperienceSection: React.FC = () => {
                           color: 'var(--cyan)', fontFamily: 'var(--font-mono)',
                           fontSize: '0.7rem', flexShrink: 0, marginTop: '2px',
                         }}>▶</span>
-                        {h}
+                        <span>{h}</span>
                       </li>
                     ))}
                   </ul>
