@@ -4,9 +4,10 @@ import { personalInfo, stats } from '../data/portfolio';
 const ROLES = [
   'Full-Stack Developer',
   '.NET Core Specialist',
-  'React Engineer',
+  'React Developer',
+  'Angular Developer',
+  'SQL Developer',
   'Azure Cloud Developer',
-  'Microservices Architect',
 ];
 
 const HeroSection: React.FC = () => {
@@ -136,7 +137,6 @@ const HeroSection: React.FC = () => {
           <span style={{ color: 'var(--cyan)' }}> ASP.NET Core</span>,
           <span style={{ color: 'var(--cyan)' }}> React</span>, and
           <span style={{ color: 'var(--cyan)' }}> Azure Cloud</span>.
-          Crafting clean, scalable systems from Noida to the cloud.
         </p>
 
         {/* CTA buttons */}

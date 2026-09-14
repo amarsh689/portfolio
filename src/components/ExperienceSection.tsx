@@ -3,7 +3,7 @@ import { experiences } from '../data/portfolio';
 
 const ExperienceSection: React.FC = () => {
   const [activeExp, setActiveExp] = useState(0);
-  const [activeProject, setActiveProject] = useState(0);
+  const [activeProject, setActiveProject] = useState<number | null>(null);
 
   const currentExp = experiences[activeExp] || experiences[0];
 
@@ -27,7 +27,7 @@ const ExperienceSection: React.FC = () => {
                 key={idx}
                 onClick={() => {
                   setActiveExp(idx);
-                  setActiveProject(0);
+                  setActiveProject(null);
                 }}
                 style={{
                   padding: '16px 20px', marginBottom: '8px',
@@ -124,7 +124,21 @@ const ExperienceSection: React.FC = () => {
               ))}
             </div>
 
-            {currentExp.projects[activeProject] && (() => {
+            {activeProject === null ? (
+              <div className="glass-card" style={{ padding: '28px' }}>
+                <div style={{
+                  fontFamily: 'var(--font-mono)', fontSize: '0.62rem',
+                  color: 'var(--text-muted)', letterSpacing: '0.1em',
+                  textTransform: 'uppercase', marginBottom: '12px',
+                }}>{'SELECT A PROJECT'}</div>
+                <p style={{
+                  color: 'var(--text-secondary)', lineHeight: 1.8,
+                  fontSize: '0.95rem', marginBottom: '0',
+                }}>
+                  Tap a project button to open its full details here.
+                </p>
+              </div>
+            ) : currentExp.projects[activeProject] && (() => {
               const proj = currentExp.projects[activeProject];
               return (
                 <div className="glass-card" style={{ padding: '28px' }}>
