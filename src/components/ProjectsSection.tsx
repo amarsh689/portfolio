@@ -9,21 +9,22 @@ const allProjects = experiences.flatMap(exp =>
   }))
 );
 
-const allTags = ['All', '.NET', 'React', 'Azure', 'Mobile', 'Fintech', 'Healthcare'];
+const allTags = ['All', '.NET', 'React', 'Azure', 'Messaging', 'Mobile', 'Fintech', 'Healthcare'];
 
 const tagFilter: Record<string, string[]> = {
   '.NET': ['ASP.NET', '.NET', 'C#', 'Entity Framework', 'Web API'],
   'React': ['React', 'Redux', 'TypeScript', 'React Native'],
-  'Azure': ['Azure', 'AKS', 'SignalR', 'Redis', 'Docker'],
+  'Azure': ['Azure', 'AKS', 'SignalR', 'Redis', 'Docker', 'Kubernetes', 'Functions'],
+  'Messaging': ['Kafka', 'RabbitMQ', 'Event-Driven'],
   'Mobile': ['React Native'],
   'Fintech': ['Vault Business', 'Forex', 'Exchange'],
   'Healthcare': ['Meddy', 'Healthcare'],
 };
 
 const getProjectColor = (name: string) => {
-  if (name.includes('Baithak')) return '#00f5ff';
+  if (name.includes('Employee Management') || name.includes('Enterprise Cloud')) return '#00f5ff';
   if (name.includes('Meddy')) return '#7b2fff';
-  if (name.includes('Book My Desk') || name.includes('BMD')) return '#0080ff';
+  if (name.includes('Book My Desk') || name.includes('Workspace Reservation')) return '#0080ff';
   if (name.includes('Vault')) return '#ff6b35';
   if (name.includes('Notification')) return '#00ff88';
   if (name.includes('Microservice') || name.includes('Container')) return '#ffcc00';
