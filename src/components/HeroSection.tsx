@@ -133,7 +133,7 @@ const HeroSection: React.FC = () => {
           lineHeight: 1.8, fontWeight: 400,
           animation: 'fadeInUp 0.7s ease 0.3s both',
         }}>
-          4+ years building enterprise-grade web applications with
+          5+ years building enterprise-grade web applications with
           <span style={{ color: 'var(--cyan)' }}> ASP.NET Core</span>,
           <span style={{ color: 'var(--cyan)' }}> React</span>, and
           <span style={{ color: 'var(--cyan)' }}> Azure Cloud</span>.

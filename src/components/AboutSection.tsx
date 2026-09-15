@@ -95,7 +95,7 @@ const AboutSection: React.FC = () => {
             }}>
               {[
                 { label: 'Location', value: personalInfo.location },
-                { label: 'Experience', value: '4+ Years' },
+                { label: 'Experience', value: '5+ Years' },
                 { label: 'Email', value: personalInfo.email },
                 { label: 'Phone', value: personalInfo.phone },
               ].map((item, i) => (

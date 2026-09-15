@@ -53,7 +53,7 @@ const EducationSection: React.FC = () => {
                     <div style={{
                       fontFamily: 'var(--font-mono)', fontSize: '0.62rem',
                       color: 'var(--text-muted)', letterSpacing: '0.08em',
-                    }}>{edu.location}</div>
+                    }}>{edu.location}{edu.year ? ` • ${edu.year}` : ''}</div>
                   </div>
                 </div>
               ))}

@@ -24,7 +24,7 @@ const SkillsSection: React.FC = () => {
           color: 'var(--text-secondary)', marginBottom: '48px',
           maxWidth: '500px', fontSize: '1rem', lineHeight: 1.7,
         }}>
-          A comprehensive toolkit built over 4+ years of enterprise development.
+          A comprehensive toolkit built over 5+ years of enterprise development.
           Hover to explore each category.
         </p>
 
