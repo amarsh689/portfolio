@@ -48,7 +48,7 @@ export const skills = [
   {
     category: "Databases",
     icon: "🗄️",
-    items: ["SQL Server", "Azure SQL Database"],
+    items: ["SQL Server", "Azure SQL Database","Cosmos DB", "Redis Cache"],
   },
   {
     category: "Cloud & DevOps",

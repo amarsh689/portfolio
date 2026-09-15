@@ -1,54 +1,67 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 const BackgroundAudio: React.FC = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [hasError, setHasError] = useState(false);
 
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
 
-    // Increase default volume for better audibility
-    audio.volume = 0.12; // 12%
-
-    // Attempt autoplay; many browsers block audible autoplay until user interacts.
+    audio.volume = 0.2;
+    const handlePlay = () => setIsPlaying(true);
+    const handlePause = () => setIsPlaying(false);
+    const handleError = () => setHasError(true);
     const tryPlay = () => {
-      const p = audio.play();
-      if (p !== undefined) {
-        p.catch(() => {
-          // play was blocked; we'll wait for a user gesture
-        });
-      }
+      setHasError(false);
+      void audio.play().catch(() => undefined);
     };
-
-    tryPlay();
-
-    // If autoplay is blocked, resume on first user gesture without showing UI
     const resumeOnGesture = () => {
       tryPlay();
       removeGestureListeners();
     };
-
     const removeGestureListeners = () => {
       document.removeEventListener('click', resumeOnGesture);
       document.removeEventListener('keydown', resumeOnGesture);
       document.removeEventListener('touchstart', resumeOnGesture);
     };
 
+    tryPlay();
+    audio.addEventListener('play', handlePlay);
+    audio.addEventListener('pause', handlePause);
+    audio.addEventListener('error', handleError);
     document.addEventListener('click', resumeOnGesture, { once: true });
     document.addEventListener('keydown', resumeOnGesture, { once: true });
     document.addEventListener('touchstart', resumeOnGesture, { once: true });
 
-    return () => removeGestureListeners();
+    return () => {
+      removeGestureListeners();
+      audio.removeEventListener('play', handlePlay);
+      audio.removeEventListener('pause', handlePause);
+      audio.removeEventListener('error', handleError);
+    };
   }, []);
 
+  const toggleAudio = () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    if (audio.paused) {
+      setHasError(false);
+      void audio.play().catch(() => setHasError(true));
+    } else {
+      audio.pause();
+    }
+  };
+
   return (
-    <audio
-      ref={audioRef}
-      src="https://cdn.pixabay.com/audio/2023/08/16/audio_4409385d79.mp3"
-      loop
-      preload="auto"
-      aria-hidden
-    />
+    <>
+      <audio ref={audioRef} src={`${process.env.PUBLIC_URL}/audio/videoplayback.weba`} loop preload="auto" />
+      <button className="audio-toggle" type="button" onClick={toggleAudio} aria-label={isPlaying ? 'Pause background audio' : 'Play background audio'}>
+        {hasError ? 'AUDIO UNAVAILABLE' : isPlaying ? 'PAUSE AUDIO' : 'PLAY AUDIO'}
+      </button>
+    </>
   );
 };
 

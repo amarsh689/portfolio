@@ -38,6 +38,31 @@ body {
   overflow-x: hidden;
 }
 
+.audio-toggle {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 20;
+  padding: 9px 12px;
+  border: 1px solid var(--cyan-border);
+  border-radius: 4px;
+  background: rgba(2, 5, 16, 0.9);
+  color: var(--cyan);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.audio-toggle:hover,
+.audio-toggle:focus-visible {
+  background: rgba(0, 245, 255, 0.12);
+  border-color: var(--cyan);
+  box-shadow: var(--glow-sm);
+  outline: none;
+}
+
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg-secondary); }
 ::-webkit-scrollbar-thumb { background: var(--cyan-dim); border-radius: 3px; }
@@ -152,4 +177,7 @@ a:hover { color: #fff; text-shadow: 0 0 10px rgba(0,245,255,0.5); }
 .animate-fade-up { animation: fadeInUp 0.7s ease both; }
 .animate-float { animation: float 3s ease-in-out infinite; }
 
-@media (max-width: 768px) { .section-container { padding: 0 16px; } }
+@media (max-width: 768px) {
+  .section-container { padding: 0 16px; }
+  .audio-toggle { right: 16px; bottom: 16px; }
+}
